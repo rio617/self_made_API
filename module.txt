@@ -1,0 +1,3 @@
+必要な外部モジュール(pip install)
+Pillow
+opencv-python

@@ -3,10 +3,6 @@ from tkinter import filedialog
 from PIL import Image, ImageTk
 import mosaic
 
-# 必要な外部モジュール
-# Pillow
-# opencv-python
-
 
 # 画像選択
 def image_select():
