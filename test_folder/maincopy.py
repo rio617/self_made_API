@@ -2,9 +2,10 @@ import tkinter as tk
 from tkinter import filedialog
 from PIL import Image, ImageTk
 import mosaic
+import mosaiccopy
 
 
-# 画像選択させる関数
+# 画像選択
 def image_select():
     img_path = filedialog.askopenfilename(
         title="画像を選択",
@@ -53,11 +54,16 @@ def push_smile_mosaic():
     change_image(mosaic_path)
 
 
+# 顔隠し
+def push_replace_face():
+    replace_path = mosaiccopy.replace_faces()
+    print(replace_path)
+
+
 # tkinterでウィンドウ用意
 root = tk.Tk()
 root.geometry("750x750")
 
-# タイトル、タイトル表示
 title = tk.Label(text="画像にモザイクをかけるアプリ", font=60)
 title.pack()
 
@@ -83,12 +89,14 @@ eye_button = tk.Button(button_frame, text="瞳をモザイク", font=30, command
 smile_button = tk.Button(
     button_frame, text="笑顔をモザイク", font=30, command=push_smile_mosaic
 )
+replace_button = tk.Button(button_frame, text="顔隠し", font=30, command=push_replace_face)
 
 # 画面表示
 button_frame.pack(pady=20)
 face_button.grid(row=0, column=0)
 eye_button.grid(row=0, column=1)
 smile_button.grid(row=0, column=2)
+replace_button.grid(row=0, column=3)
 
 # tkinterでラベル用意、画面表示
 label = tk.Label(image_frame)

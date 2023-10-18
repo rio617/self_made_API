@@ -1,3 +1,5 @@
+main.py と mosaic.py 以外閲覧禁止・・・
+
 必要な外部モジュール(pip install)
-Pillow
-opencv-python
+pip install Pillow
+pip install opencv-python
